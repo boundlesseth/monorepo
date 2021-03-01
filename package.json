@@ -1,0 +1,12 @@
+{
+  "name": "@boundlesseth/monorepo",
+  "repository": "https://github.com/boundlesseth/monorepo",
+  "license": "GPL-3.0",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "contracts",
+      "vue-app"
+    ]
+  }
+}
