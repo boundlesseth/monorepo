@@ -4,7 +4,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/token/ERC1155/ERC1155Burnable.sol";
 
-contract Boundless is Ownable, ERC1155, ERC1155Burnable {
+contract Boundless is Ownable, IERC1155, ERC1155Burnable {
 
   mapping (uint256 => bool) public minted;
   uint8 artists;
