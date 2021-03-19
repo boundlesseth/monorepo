@@ -11,7 +11,8 @@ contract Boundless is Ownable, ERC1155, ERC1155Burnable {
 
   event TokenMinted(bytes32 _blockhash, uint256 id);
   event ArtistAdded(uint8 artists);
-  event TokenBurned(uint256 id)
+  event TokenBurned(address account, uint256 id);
+  event TokensBurned(address account, uint256[] ids);
 
   // TODO
   constructor(uint8 _artists) public ERC1155("https://game.example/api/item/{id}.json") {
@@ -25,7 +26,8 @@ contract Boundless is Ownable, ERC1155, ERC1155Burnable {
   {
     uint256 id = getId(_blockhash, artist);
     require(!minted[id], "Already minted");
-    require(isValid(_blockhash), "Invalid _blockhash");
+    isValidBlock(_blockhash);
+    isValidArtist(artist);
     _mint(msg.sender, id, 1, "");
     minted[id] = true;
     emit TokenMinted(_blockhash, id);
@@ -42,12 +44,24 @@ contract Boundless is Ownable, ERC1155, ERC1155Burnable {
   }
 
   // TODO
-  // checks if a given block hash is corresponds to a real historic block.
-  function isValid(bytes32 _blockhash)
+  // check if a given block hash is corresponds to a real historic block.
+  function isValidBlock(bytes32 _blockhash)
     public
-    pure
+    view
     returns (bool valid)
   {
+    require(true, "Invalid blockhash");
+    return (true);
+  }
+
+  // TODO
+  // check if a given artist is valid
+  function isValidArtist(uint8 artist)
+    public
+    view
+    returns (bool)
+  {
+    require(artist <= artists, "No such artist");
     return (true);
   }
 
@@ -62,19 +76,18 @@ contract Boundless is Ownable, ERC1155, ERC1155Burnable {
   // Burn a token
   function burn(address account, uint256 id, uint256 value)
     public
-    virtual
     override
   {
     ERC1155Burnable.burn(account,id, value);
-    emit TokenBurned(id)
+    emit TokenBurned(account, id);
   }
 
   // Burn a batch of tokens
   function burnBatch(address account, uint256[] memory ids, uint256[] memory values)
     public
-    virtual
     override
   {
     ERC1155Burnable.burnBatch(account,ids, values);
+    emit TokensBurned(account, ids);
   }
 }
