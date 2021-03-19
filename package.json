@@ -8,5 +8,8 @@
       "contracts",
       "vue-app"
     ]
+  },
+  "scripts": {
+    "compile": "yarn workspace contracts hardhat compile"
   }
 }
