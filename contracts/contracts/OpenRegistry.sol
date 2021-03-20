@@ -3,7 +3,7 @@ pragma solidity 0.6.2;
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 
-contract Registry {
+contract OpenRegistry {
     event ItemAdded(bytes32 item);
 
     mapping (bytes32 => bool) items;

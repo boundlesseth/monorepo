@@ -10,6 +10,8 @@ import "@openzeppelin/contracts/math/SafeMath.sol";
 
 contract Seller is Ownable, ERC1155Holder {
 
+    using SafeMath for uint256;
+
     event NewDuration(uint duration);
     event NewStartPrice(uint256 startPrice);
     event NewReceiver(address receiver);
@@ -26,10 +28,11 @@ contract Seller is Ownable, ERC1155Holder {
     uint256 public startPrice;
     mapping (address => mapping(uint256 => uint)) sales; // tokenContract => tokenID => timestamp when sale ends
 
-    constructor(address _receiver, address _nativeToken, uint _duration) public {
+    constructor(address _receiver, address _nativeToken, uint256 _startPrice, uint _duration) public {
         receiver = _receiver;
-        duration = _duration;
         nativeToken = IERC20(_nativeToken);
+        startPrice = _startPrice;
+        duration = _duration;
     }
 
     // TODO
@@ -40,8 +43,10 @@ contract Seller is Ownable, ERC1155Holder {
         IERC1155 erc1155 = IERC1155(_tokenContract);
         uint end = sales[address(erc1155)][id];
         require(erc1155.balanceOf(address(this), id) > 0, "Seller has no balance in this token.");
-        require(end < 1, "Token already on sale.");
-        end = block.timestamp + duration;
+        require(block.timestamp > end, "Token already on sale.");
+        end = block.timestamp;
+        end.add(duration);
+        sales[address(erc1155)][id] = end;
         emit SaleStarted(address(erc1155), id, end);
     }
 
@@ -53,6 +58,7 @@ contract Seller is Ownable, ERC1155Holder {
         IERC1155 erc1155 = IERC1155(_tokenContract);
         require(erc1155.balanceOf(address(this), id) > 0, "Seller has no balance in this token.");
         nativeToken.transferFrom(msg.sender, receiver, getCurrentPrice(address(erc1155), id));
+        erc1155.safeTransferFrom(address(this), msg.sender, id, erc1155.balanceOf(address(this), id), "");
     }
 
     // TODO
@@ -62,10 +68,14 @@ contract Seller is Ownable, ERC1155Holder {
         view
         returns(uint price)
     {
-        // uint end = sales[_tokenContract][id];
-        // uint remaining = sub(end, block.timestamp);
-        // uint percent = div(remaining, duration);
-        // uint price = mul(startPrice, percent);
+        IERC1155 erc1155 = IERC1155(_tokenContract);
+        uint price = 0;
+        uint end = sales[address(erc1155)][id];
+        if (block.timestamp < end)
+        {
+            price = end.sub(block.timestamp).mul(startPrice).div(duration) | 0;
+        }
+        return(price);
     }
 
     // set the length of time that each sale should last.

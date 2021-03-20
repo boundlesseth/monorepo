@@ -3,7 +3,7 @@ pragma solidity 0.6.2;
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 
-contract Registry is Ownable {
+contract OwnedRegistry is Ownable {
     event ItemAdded(bytes32 item);
     event ItemRemoved(bytes32 item);
 
