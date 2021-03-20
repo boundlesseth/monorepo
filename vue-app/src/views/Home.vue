@@ -34,7 +34,6 @@
               </h4>
             </div>
           </div>
-
         </div>
       </div>
       <div class="block-explorer">
@@ -55,51 +54,51 @@
 </template>
 
 <style lang="scss">
-  .home {
-    &__content {
-      padding: 4em;
-    }
-    &__block-header {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-    &__artworks {
-      display: flex;
-      flex-direction: row;
-      margin: 2em 0;
-      &__item {
-        flex: 1;
-        &:not(:last-of-type) {
-          margin-right: 2em;
-        }
+.home {
+  &__content {
+    padding: 4em;
+  }
+  &__block-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__artworks {
+    display: flex;
+    flex-direction: row;
+    margin: 2em 0;
+    &__item {
+      flex: 1;
+      &:not(:last-of-type) {
+        margin-right: 2em;
+      }
+      > img {
+        width: 100%;
+      }
+      &__artist {
+        display: flex;
+        align-items: center;
+        padding: 1em 0.5em;
         > img {
-          width: 100%;
+          border: 0.15em solid black;
+          height: 3em;
+          width: 3em;
+          border-radius: 50%;
+          object-fit: cover;
         }
-        &__artist {
-          display: flex;
-          align-items: center;
-          padding: 1em 0.5em;
-          > img {
-            border: 0.15em solid black;
-            height: 3em;
-            width: 3em;
-            border-radius: 50%;
-            object-fit: cover;
-          }
-          h4 {
-            padding-left: 1em;
-          }
+        h4 {
+          padding-left: 1em;
         }
       }
     }
-    .block-explorer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-    }
   }
+  .block-explorer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
 </style>
 
 <script lang="ts">
