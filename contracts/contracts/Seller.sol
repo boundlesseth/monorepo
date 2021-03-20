@@ -41,11 +41,10 @@ contract Seller is Ownable, ERC1155Holder {
         public
     {
         IERC1155 erc1155 = IERC1155(_tokenContract);
-        uint end = sales[address(erc1155)][id];
+        uint end = getSaleEnd(_tokenContract, id);
         require(erc1155.balanceOf(address(this), id) > 0, "Seller has no balance in this token.");
-        require(block.timestamp > end, "Token already on sale.");
-        end = block.timestamp;
-        end.add(duration);
+        require(end < block.timestamp, "Token already on sale.");
+        end = (block.timestamp).add(duration);
         sales[address(erc1155)][id] = end;
         emit SaleStarted(address(erc1155), id, end);
     }
@@ -73,9 +72,17 @@ contract Seller is Ownable, ERC1155Holder {
         uint end = sales[address(erc1155)][id];
         if (block.timestamp < end)
         {
-            price = end.sub(block.timestamp).mul(startPrice).div(duration) | 0;
+            price = end.sub(block.timestamp).mul(startPrice).div(duration);
         }
         return(price);
+    }
+
+    function getSaleEnd(address _tokenContract, uint256 id)
+        public
+        view
+        returns(uint timestamp)
+    {
+        sales[_tokenContract][id];
     }
 
     // set the length of time that each sale should last.

@@ -41,8 +41,8 @@ contract Boundless is Ownable, IERC1155, ERC1155Burnable {
     {
         uint256 id = getId(_blockhash, _artist);
         require(!minted[id], "Already minted");
-        blockRegistry.isValid(_blockhash);
-        artistRegistry.isValid(_artist);
+        require(blockRegistry.isValid(_blockhash), "Invalid Block");
+        require(artistRegistry.isValid(_artist), "Invalid Artist");
         _mint(address(seller), id, 1, "");
         minted[id] = true;
         seller.sellToken(address(this), id);
