@@ -2,11 +2,6 @@
   <div class="token">
     <div class="content-container">
       <div class="nav nav--token">
-        <div class="nav--token__logo">
-          <a href='/'>
-            <img src="../assets/logo.png" />
-          </a>
-        </div>
         <div class="flex-row">
           <div class="nav--token__commerce">
             <h3>Price:</h3>
