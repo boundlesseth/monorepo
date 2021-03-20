@@ -1,32 +1,56 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/artist/1">Artist</router-link> |
-    <router-link to="/token/1">Token</router-link> |
-    <router-link to="/account">Account</router-link>
   </div>
   <router-view />
 </template>
 
 <style lang="scss">
+
+body {
+  padding:0;
+  margin: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+h3 {
+  margin: 0;
+  font-weight: bold;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+.nav {
+  padding: 4em;
+  background: #eee;
+  &__logo img {
+    height: 4em;
   }
 }
+
+.content-container {
+  max-width: 70em;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+}
+
+.block-explorer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 3em 0;
+}
+
+img.artist-image {
+  border: 0.15em solid black;
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 </style>
