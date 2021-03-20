@@ -23,7 +23,7 @@ const routes: Array<RouteRecordRaw> = [
     path: "/account",
     name: "Account",
     component: () =>
-      import(/* webpackChunkName: "token" */ "../views/Account.vue")
+      import(/* webpackChunkName: "account" */ "../views/Account.vue")
   }
 ];
 

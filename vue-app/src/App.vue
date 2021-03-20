@@ -22,9 +22,20 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: black;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1{
+
+}
+h2 {
+
+}
 h3 {
   margin: 0;
   font-weight: bold;
@@ -59,4 +70,22 @@ img.artist-image {
   border-radius: 50%;
   object-fit: cover;
 }
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    &--center {
+      justify-content: space-between;
+      align-items: center;
+    }
+}
+
+.hover-scale {
+  transition: 150ms transform;
+  &:hover {
+    transform: scale(1.02)
+  }
+}
+
 </style>

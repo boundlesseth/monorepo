@@ -1,10 +1,14 @@
 <template>
-  <div class="nav">
-    <div class="nav__logo">
-      <img alt="Vue logo" src="../assets/logo.png" />
+  <div class="content-container">
+    <div class="nav">
+      <div class="nav__logo">
+        <a href="/">
+          <img alt="Boundless" src="../assets/logo.png" />
+        </a>
+      </div>
     </div>
+    <router-view />
   </div>
-  <router-view />
 </template>
 
 <script lang="ts">
