@@ -1,18 +1,12 @@
 <template>
   <div class="home">
     <div class="content-container">
-      <div class="nav">
-        <div class="nav__logo">
-          <img alt="Vue logo" src="../assets/logo.png" />
-        </div>
-      </div>
       <div class="home__content">
         <div class="home__block-header">
           <h3>Block #12070422</h3>
           <small>next block in 13 sec </small>
         </div>
         <div class="home__artworks">
-
           <div class="home__artworks__item">
             <img src="../assets/art-1.png" />
             <div class="home__artworks__item__artist">
@@ -112,9 +106,6 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "home",
-  components: {
-
-  }
+  name: "Home"
 });
 </script>

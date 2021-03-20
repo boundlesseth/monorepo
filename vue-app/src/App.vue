@@ -1,13 +1,20 @@
 <template>
-  <div id="nav">
-  </div>
-  <router-view />
+  <MainLayout></MainLayout>
 </template>
 
-<style lang="scss">
+<script lang="ts">
+import { defineComponent } from "vue";
+import MainLayout from "./layouts/Main.vue";
 
+export default defineComponent({
+  name: "App",
+  components: { MainLayout }
+});
+</script>
+
+<style lang="scss">
 body {
-  padding:0;
+  padding: 0;
   margin: 0;
 }
 
@@ -52,5 +59,4 @@ img.artist-image {
   border-radius: 50%;
   object-fit: cover;
 }
-
 </style>
