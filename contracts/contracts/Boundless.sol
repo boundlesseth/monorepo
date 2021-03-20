@@ -31,8 +31,7 @@ contract Boundless is Ownable, IERC1155, ERC1155Burnable {
     }
 
     // TODO
-    // allows anyone to mint a new NFT, only if the given hash is a valid block hash (provable by current block hash)
-    // and has not already been minted.
+    // allows anyone to mint a new NFT, only if the given hash and artist are a valid.
     function mint(bytes32 _blockhash, bytes32 _artist)
         public
     {
@@ -53,18 +52,6 @@ contract Boundless is Ownable, IERC1155, ERC1155Burnable {
     {
         id = uint256(keccak256(abi.encode(_blockhash, _artist)));
         return (id);
-    }
-
-    // TODO: pull this out into an interface contract so it can be compatible with different validation mechanisms.
-    // TODO: also add a setter function.
-    // check if a given block hash is corresponds to a real historic block.
-    function isValidBlock(bytes32 _blockhash)
-        public
-        view
-        returns (bool valid)
-    {
-        require(true, "Invalid blockhash");
-        return (true);
     }
 
     // Burn a token
