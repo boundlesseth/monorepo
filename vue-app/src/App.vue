@@ -13,9 +13,17 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+
+$borderRadius: 1em;
+$borderWidth: 0.1em;
+
 body {
   padding: 0;
   margin: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 #app {
@@ -42,25 +50,69 @@ h3 {
 }
 
 .nav {
-  padding: 4em;
+  padding: 1em 0;
   background: #eee;
   &__logo img {
     height: 4em;
   }
 }
 
+.container {
+  max-width: 80em;
+  margin: 0 auto;
+  position: relative;
+}
+
 .content-container {
-  max-width: 70em;
+  max-width: 80em;
   margin: 0 auto;
   position: relative;
   min-height: 100vh;
 }
 
-.block-explorer {
+.flex-row {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  width: 100%;
+  &--center {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.block-explorer {
   padding: 3em 0;
+  width: auto;
+  &__picker {
+    input {
+      outline: none;
+      border: none;
+      font-size: 1.2em;
+      width: 10em;
+      height: 3rem;
+      padding: 0.4rem 1rem;
+      border-radius: 0.5rem 0 0 0.5rem;
+    }
+    button {
+      background: white;
+      border: none;
+      height: 3rem;
+      position: relative;
+      bottom: 0.275em;
+      &:last-of-type {
+        border-radius: 0 0.5rem 0.5rem 0;
+      }
+    }
+  }
+  &__buttons {
+    button {
+      background: white;
+      border: none;
+      height: 3rem;
+      border-radius: .5rem;
+      margin-left: 0.5rem;
+    }
+  }
 }
 
 img.artist-image {
@@ -71,20 +123,28 @@ img.artist-image {
   object-fit: cover;
 }
 
-.flex-row {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    &--center {
-      justify-content: space-between;
-      align-items: center;
-    }
-}
-
 .hover-scale {
   transition: 150ms transform;
   &:hover {
     transform: scale(1.02)
+  }
+}
+
+.gradient-border {
+  border-radius: $borderRadius;
+  position: relative;
+  background: linear-gradient(180deg, #736CC0 0%, #FFF38A 30%, rgba(153, 255, 237, 0.78) 46.88%, #b592ffb9 74.48%, #fd8bffc4 100%);
+  z-index: -2;
+  &::before {
+    content: '';
+    position: absolute;
+    left: $borderWidth;
+    right: $borderWidth;
+    bottom: $borderWidth;
+    top: $borderWidth;
+    border-radius: $borderRadius - 0.1em;
+    background: white;
+    z-index: -1;
   }
 }
 
