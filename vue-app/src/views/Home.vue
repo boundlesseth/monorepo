@@ -20,7 +20,7 @@
                 src="../assets/demo-images/artist-1.png"
               />
               <h3>
-                Kate the Cursed
+                Mondriaticia
               </h3>
             </div>
           </div>
@@ -34,7 +34,7 @@
                 src="../assets/demo-images/artist-2.png"
               />
               <h3>
-                Kate the Cursed
+                Albertron
               </h3>
             </div>
           </div>
@@ -265,7 +265,7 @@
   }
   &__prevgen {
     text-align: center;
-    padding: 8em 2em;
+    padding: 8em 0;
     h2 {
       margin-bottom: 3em;
     }
