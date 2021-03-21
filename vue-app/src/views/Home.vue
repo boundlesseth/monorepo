@@ -7,41 +7,41 @@
       -->
       <div class="home__recent gradient-border">
         <div class="home__recent__title flex-row flex-row--center ">
-          <h3>Latest Generation</h3>
+          <h2>Latest Generation</h2>
           <small>minted from block #12989234</small>
         </div>
         <div class="flex-row">
           <div class="home__recent__item">
             <a href="/token/1">
-              <img class="hover-scale" src="../assets/art-1.png" />
+              <img class="hover-scale" src="../assets/demo-images/art-1.png" />
             </a>
             <div class="home__recent__item__artist">
-              <img class="hover-scale artist-image" src="../assets/artist-1.png" />
-              <h4>
+              <img class="hover-scale artist-image" src="../assets/demo-images/artist-1.png" />
+              <h3>
                 Kate the Cursed
-              </h4>
+              </h3>
             </div>
           </div>
           <div class="home__recent__item">
             <a href="/token/2">
-              <img class="hover-scale" src="../assets/art-2.png" />
+              <img class="hover-scale" src="../assets/demo-images/art-2.png" />
             </a>
             <div class="home__recent__item__artist">
-              <img class="hover-scale artist-image" src="../assets/artist-2.png" />
-              <h4>
+              <img class="hover-scale artist-image" src="../assets/demo-images/artist-2.png" />
+              <h3>
                 Kate the Cursed
-              </h4>
+              </h3>
             </div>
           </div>
           <div class="home__recent__item">
             <a href="/token/3">
-              <img class="hover-scale" src="../assets/art-3.png" />
+              <img class="hover-scale" src="../assets/demo-images/art-3.png" />
             </a>
             <div class="home__recent__item__artist">
-              <img class="hover-scale artist-image" src="../assets/artist-3.png" />
-              <h4>
+              <img class="hover-scale artist-image" src="../assets/demo-images/artist-3.png" />
+              <h3>
                 Kate the Cursed
-              </h4>
+              </h3>
             </div>
           </div>
         </div>
@@ -51,44 +51,44 @@
         Previous Generations section
       -->
       <div class="home__prevgen">
-        <h3>
+        <h2>
           Previous Generations
-        </h3>
+        </h2>
         <div class="home__prevgen__container">
 
           <div class="home__prevgen__i gradient-border">
             <div class="home__prevgen__i__header">
-              <h4>Gen #123789423</h4>
+              <h3>Gen #123789423</h3>
               <small>seeded 10/19/20</small>
             </div>
             <div class="home__prevgen__i__works flex-row">
-              <img src="../assets/art-1.png" />
-              <img src="../assets/art-2.png" />
-              <img src="../assets/art-3.png" />
+              <img src="../assets/demo-images/art-1.png" />
+              <img src="../assets/demo-images/art-2.png" />
+              <img src="../assets/demo-images/art-3.png" />
             </div>
           </div>
 
           <div class="home__prevgen__i gradient-border">
             <div class="home__prevgen__i__header">
-              <h4>Gen #123789423</h4>
+              <h3>Gen #123789423</h3>
               <small>seeded 10/19/20</small>
             </div>
             <div class="home__prevgen__i__works flex-row">
-              <img src="../assets/art-1.png" />
-              <img src="../assets/art-2.png" />
-              <img src="../assets/art-3.png" />
+              <img src="../assets/demo-images/art-1.png" />
+              <img src="../assets/demo-images/art-2.png" />
+              <img src="../assets/demo-images/art-3.png" />
             </div>
           </div>
 
           <div class="home__prevgen__i gradient-border">
             <div class="home__prevgen__i__header">
-              <h4>Gen #123789423</h4>
+              <h3>Gen #123789423</h3>
               <small>seeded 10/19/20</small>
             </div>
             <div class="home__prevgen__i__works flex-row">
-              <img src="../assets/art-1.png" />
-              <img src="../assets/art-2.png" />
-              <img src="../assets/art-3.png" />
+              <img src="../assets/demo-images/art-1.png" />
+              <img src="../assets/demo-images/art-2.png" />
+              <img src="../assets/demo-images/art-3.png" />
             </div>
           </div>
 
@@ -100,18 +100,18 @@
 
 <style lang="scss">
   .home {
-    &__recent__title {
-      background: white;
-      position: relative;
-      top: -0.8em;
-      padding: 0 1em;
-      box-sizing: content-box;
-      left: -1em;
-      margin-bottom: 2em;
-    }
     &__recent {
       padding: 0 4em 2em;
-      margin-top: 4em;
+      margin-top: 6em;
+      &__title {
+        background: var(--white);
+        position: relative;
+        top: -1.2em;
+        padding: 0 1em;
+        box-sizing: content-box;
+        left: -1em;
+        margin-bottom: 2em;
+      }
       &__item {
         flex: 1;
         &:not(:last-of-type) {
@@ -128,7 +128,7 @@
           margin: 0.8em 0;
           padding: 0.2em 0.5em;
           border-radius: 0.5em;
-          h4 {
+          h3 {
             padding-left: 1em;
           }
         }
@@ -137,7 +137,7 @@
     &__prevgen {
       text-align: center;
       padding: 8em 2em;
-      h3 {
+      h2 {
         margin-bottom: 3em;
       }
       &__container {
@@ -149,10 +149,11 @@
       }
       &__i {
         &__header {
-          background: white;
+          background: var(--white);
           position: relative;
           top: -0.6em;
-          width: 50%;
+          display: inline-block;
+          padding: 0 1em;
           margin: 0 auto;
         }
       }

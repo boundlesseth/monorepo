@@ -7,29 +7,29 @@
         </div>
         <div class="flex-row">
           <div class="token__image">
-            <img src="../assets/art-3.png" />
+            <img src="../assets/demo-images/art-3.png" />
           </div>
           <div class="token__info">
             <div class="token__info__section">
-              <h3>Block Number</h3>
-              <p>#1204389042</p>
+              <h2>Block Number</h2>
+              <h4>#1204389042</h4>
             </div>
             <div class="token__info__section">
-              <h3>Block Hash</h3>
-              <p>0x829bd82...d092293333a830</p>
+              <h2>Block Hash</h2>
+              <h4>0x829bd82...d092293333a830</h4>
             </div>
             <div class="token__info__section">
-              <h3>Artist</h3>
-              <p>Mondriaticia</p>
+              <h2>Artist</h2>
+              <h4>Mondriaticia</h4>
             </div>
             <div class="token__info__section">
-              <h3>Value</h3>
+              <h2>Value</h2>
               <div class="big-num">
                 0.9488123 ETH
               </div>
-              <p>
+              <h4>
                 purchased 01/20/21
-              </p>
+              </h4>
             </div>
             <button>
               Buy
@@ -48,9 +48,9 @@
       padding-bottom: 1em;
     }
     &__title {
-      padding: 0 4em;
+      padding: 0 6em;
       h1 {
-        background: white;
+        background: var(--white);
         display: inline-block;
         position: relative;
         top: -0.7em;
@@ -60,7 +60,7 @@
     }
     &__image {
       width: 66.7%;
-      padding: 2em 4em 2em 6em;
+      padding: 0 4em 2em 6em;
       img {
         width: 100%;
       }
@@ -77,7 +77,7 @@
         bottom: 0;
         font-size: 2em;
         background: none;
-        border: 1px solid black;
+        border: 1px solid var(--black);
         width: 100%;
         padding: 1em;
       }

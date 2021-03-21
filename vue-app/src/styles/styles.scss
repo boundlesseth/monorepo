@@ -1,0 +1,123 @@
+@import './global';
+@import './typography';
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav {
+  padding: 1em 0;
+  background: var(--light-gray);
+  &__logo img {
+    height: 4em;
+  }
+}
+
+.container {
+  max-width: 80em;
+  margin: 0 auto;
+  position: relative;
+}
+
+.content-container {
+  max-width: 80em;
+  margin: 0 auto 4em;
+  position: relative;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  &--center {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.block-explorer {
+  padding: 3em 0;
+  width: auto;
+  button {
+    background: var(--white);
+    border: none;
+    height: 3rem;
+    font-size: 'Relative Mono';
+    cursor: pointer;
+  }
+  &__picker {
+    input {
+      outline: none;
+      border: none;
+      font-size: 1.2em;
+      width: 10em;
+      height: 3rem;
+      padding: 0.4rem 1rem;
+      border-radius: 0.5rem 0 0 0.5rem;
+      font-family: 'Relative Mono';
+      font-size: $h4fontsize;
+    }
+    button {
+      position: relative;
+      bottom: 0.1em;
+      font-size: 'Relative Mono';
+      &:last-of-type {
+        border-radius: 0 0.5rem 0.5rem 0;
+      }
+    }
+  }
+  &__buttons {
+    button {
+      border-radius: .5rem;
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+img.artist-image {
+  border: 0.15em solid black;
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hover-scale {
+  transition: 150ms transform;
+  &:hover {
+    transform: scale(1.02)
+  }
+}
+
+.gradient-border {
+  border-radius: $borderRadius;
+  border: 1px solid var(--border-color);
+
+  /*
+    z-index is messing things up the colorful borders
+  */
+  // position: relative;
+  // background: linear-gradient(180deg, #736CC0 0%, #FFF38A 30%, rgba(153, 255, 237, 0.78) 46.88%, #b592ffb9 74.48%, #fd8bffc4 100%);
+  // z-index: -2;
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   left: $borderWidth;
+  //   right: $borderWidth;
+  //   bottom: $borderWidth;
+  //   top: $borderWidth;
+  //   border-radius: $borderRadius - 0.1em;
+  //   background: var(--white);
+  //   z-index: -1;
+  // }
+}

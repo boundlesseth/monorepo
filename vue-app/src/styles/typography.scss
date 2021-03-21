@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'Relative';
+  font-weight: normal;
+  src: url('../assets/fonts/relative-book.eot'); /* IE9 Compat Modes */
+  src: url('../assets/fonts/relative-book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/relative-book.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/relative-book.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/fonts/relative-book.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Relative';
+  font-weight: 700;
+  src: url('../assets/fonts/relative-bold.eot'); /* IE9 Compat Modes */
+  src: url('../assets/fonts/relative-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/relative-bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/relative-bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/fonts/relative-bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Relative Mono';
+  font-weight: normal;
+  src: url('../assets/fonts/relative-mono-11-pitch.eot'); /* IE9 Compat Modes */
+  src: url('../assets/fonts/relative-mono-11-pitch.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/relative-mono-11-pitch.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/relative-mono-11-pitch.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/fonts/relative-mono-11-pitch.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+html {
+  font-size: 13px;
+  color: var(--black);
+  @media(max-width: $break_sm) {
+    font-size: 18px;
+  }
+}
+body {
+  margin: 0;
+  color: var(--black);
+  font-family: 'Relative', 'Helvetica', sans-serif;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+h1 {
+  font-size: $h1fontsize;
+  line-height: 1.4em;
+  margin-bottom: 1em;
+  text-transform: lowercase;
+  font-weight: 700;
+}
+h2 {
+  font-size: $h2fontsize;
+  margin-bottom: 0.2em;
+  font-weight: 700;
+}
+h3 {
+  font-size: $h3fontsize;
+  font-weight: 700;
+}
+h4 {
+  font-size: $h4fontsize;
+  font-family: "Relative Mono";
+}
+p {
+  font-size: $pfontsize;
+  margin: 0;
+  padding-bottom: 0.5em;
+  font-family: 'Relative Mono';
+}
+a {
+  color: var(--black);
+  text-decoration: none;
+}
+small {
+  font-size: $pfontsize;
+  font-family: 'Relative Mono';
+}
+.italic {
+  font-style: italic;
+}
+.uppercase {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+.big-num {
+  font-family: 'Relative Mono';
+  font-size: 3em;
+  font-weight: 100;
+}
+.mono {
+  font-family: 'Relative Mono';
+}
+.strikethrough {
+  text-decoration: line-through;
+}
+.color-blk {
+  color: var(--black)
+}
+.color-gray {
+  color: var(--gray)
+}
+.text--left {
+  text-align: left;
+}
