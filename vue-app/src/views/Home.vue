@@ -20,7 +20,7 @@
                 src="../assets/demo-images/artist-1.png"
               />
               <h3>
-                Mondriaticia
+                Mondriatica
               </h3>
             </div>
           </div>
