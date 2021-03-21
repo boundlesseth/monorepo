@@ -50,7 +50,50 @@
       <!-- 
         Previous Generations section
       -->
-      <div class="home__"></div>
+      <div class="home__prevgen">
+        <h3>
+          Previous Generations
+        </h3>
+        <div class="home__prevgen__container">
+
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h4>Gen #123789423</h4>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works flex-row">
+              <img src="../assets/art-1.png" />
+              <img src="../assets/art-2.png" />
+              <img src="../assets/art-3.png" />
+            </div>
+          </div>
+
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h4>Gen #123789423</h4>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works flex-row">
+              <img src="../assets/art-1.png" />
+              <img src="../assets/art-2.png" />
+              <img src="../assets/art-3.png" />
+            </div>
+          </div>
+
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h4>Gen #123789423</h4>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works flex-row">
+              <img src="../assets/art-1.png" />
+              <img src="../assets/art-2.png" />
+              <img src="../assets/art-3.png" />
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -88,6 +131,37 @@
           h4 {
             padding-left: 1em;
           }
+        }
+      }
+    }
+    &__prevgen {
+      text-align: center;
+      padding: 8em 2em;
+      h3 {
+        margin-bottom: 3em;
+      }
+      &__container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8em;
+        grid-auto-rows: minmax(100px, auto);
+      }
+      &__i {
+        &__header {
+          background: white;
+          position: relative;
+          top: -0.6em;
+          width: 50%;
+          margin: 0 auto;
+        }
+      }
+      &__i__works {
+        margin: 18% 0 30%;
+        justify-content: space-evenly;
+        img {
+          display: inline-block;
+          width: 25%;
         }
       }
     }

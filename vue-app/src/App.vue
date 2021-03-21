@@ -48,6 +48,9 @@ h3 {
   margin: 0;
   font-weight: bold;
 }
+h4 {
+  margin: 0;
+}
 
 .nav {
   padding: 1em 0;
@@ -132,20 +135,25 @@ img.artist-image {
 
 .gradient-border {
   border-radius: $borderRadius;
-  position: relative;
-  background: linear-gradient(180deg, #736CC0 0%, #FFF38A 30%, rgba(153, 255, 237, 0.78) 46.88%, #b592ffb9 74.48%, #fd8bffc4 100%);
-  z-index: -2;
-  &::before {
-    content: '';
-    position: absolute;
-    left: $borderWidth;
-    right: $borderWidth;
-    bottom: $borderWidth;
-    top: $borderWidth;
-    border-radius: $borderRadius - 0.1em;
-    background: white;
-    z-index: -1;
-  }
+  border: 1px solid #bbb;
+
+  /*
+    z-index is messing things up the colorful borders
+  */
+  // position: relative;
+  // background: linear-gradient(180deg, #736CC0 0%, #FFF38A 30%, rgba(153, 255, 237, 0.78) 46.88%, #b592ffb9 74.48%, #fd8bffc4 100%);
+  // z-index: -2;
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   left: $borderWidth;
+  //   right: $borderWidth;
+  //   bottom: $borderWidth;
+  //   top: $borderWidth;
+  //   border-radius: $borderRadius - 0.1em;
+  //   background: white;
+  //   z-index: -1;
+  // }
 }
 
 </style>
