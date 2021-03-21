@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^3.4.1",
+    "@superfluid-finance/ethereum-contracts": "^1.0.0-rc.1",
     "@typechain/ethers-v5": "^6.0.4",
     "dotenv": "^8.2.0",
     "hardhat-typechain": "^0.3.5",
@@ -20,6 +21,7 @@
     "typechain": "^4.0.3"
   },
   "scripts": {
-    "compile": "hardhat compile"
+    "compile": "hardhat compile",
+    "test": "hardhat test"
   }
 }
