@@ -1,5 +1,5 @@
 <template>
-    <iframe ref="iframe" v-bind:src="genHashUrl" />
+    <iframe ref="iframe" v-bind:src="genHashUrl2" />
     <img class="hover-scale" ref="img" />
 </template>
 <style>
@@ -13,15 +13,15 @@
     import objectHash from 'object-hash';
 
     export default defineComponent({
-        name: "make-art",
+        name: "make-art-2",
         props: {
             src: String,
             seed: String
         },
         computed: {
-            genHashUrl() {
+            genHashUrl2() {
                 const customSeed = objectHash(Math.random()) + objectHash(Math.random())
-                return "/p5-artworks/mondriaticia.html?seed=" +  customSeed.slice(0, 64)
+                return "/p5-artworks/albertron.html?seed=" +  customSeed.slice(0, 64)
             }
         },
         mounted() {
@@ -36,7 +36,7 @@
                 } catch(e) {
                     console.log(e)
                 }
-            }, 1000)
+            }, 2000)
         }
     });
 </script>

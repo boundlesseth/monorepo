@@ -12,9 +12,7 @@
         <div class="flex-row">
           <div class="home__recent__item">
             <a href="/token/795e0c7b836b80971f266d4b6b329b459de0bc7936f71a1d79c54e9beeb8377a">
-              <MakeArt
-                src="/p5-artworks/albertron.html?seed=795e0c7b836b80971f266d4b6b329b459de0bc7936f71a1d79c54e9beeb8377a"
-              />
+              <MakeArt  />
             </a>
             <div class="home__recent__item__artist">
               <img
@@ -28,30 +26,12 @@
           </div>
           <div class="home__recent__item">
             <a href="/token/795e71a1d79c54e9b0c7b836b80971feeb8377af123d4b6b329b4599a6ec7936">
-              <MakeArt
-                src="/p5-artworks/mondriaticia.html?seed=795e71a1d79c54e9b0c7b836b80971feeb8377af123d4b6b329b4599a6ec7936"
-              />
+              <MakeArt2 />
             </a>
             <div class="home__recent__item__artist">
               <img
                 class="hover-scale artist-image"
                 src="../assets/demo-images/artist-2.png"
-              />
-              <h3>
-                Kate the Cursed
-              </h3>
-            </div>
-          </div>
-          <div class="home__recent__item">
-            <a href="/token/795e0d79c54e9beeb8377a395ae971fc7b89b459de0bc7936f71a1266d4b6b32">
-              <MakeArt
-                src="/p5-artworks/albertron.html?seed=795e0d79c54e9beeb8377a395ae971fc7b89b459de0bc7936f71a1266d4b6b32"
-              />
-            </a>
-            <div class="home__recent__item__artist">
-              <img
-                class="hover-scale artist-image"
-                src="../assets/demo-images/artist-3.png"
               />
               <h3>
                 Kate the Cursed
@@ -74,10 +54,13 @@
               <h3>Gen #123789423</h3>
               <small>seeded 10/19/20</small>
             </div>
-            <div class="home__prevgen__i__works flex-row">
-              <img src="../assets/demo-images/art-1.png" />
-              <img src="../assets/demo-images/art-2.png" />
-              <img src="../assets/demo-images/art-3.png" />
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
             </div>
           </div>
           <div class="home__prevgen__i gradient-border">
@@ -85,10 +68,13 @@
               <h3>Gen #123789423</h3>
               <small>seeded 10/19/20</small>
             </div>
-            <div class="home__prevgen__i__works flex-row">
-              <img src="../assets/demo-images/art-1.png" />
-              <img src="../assets/demo-images/art-2.png" />
-              <img src="../assets/demo-images/art-3.png" />
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
             </div>
           </div>
           <div class="home__prevgen__i gradient-border">
@@ -96,12 +82,145 @@
               <h3>Gen #123789423</h3>
               <small>seeded 10/19/20</small>
             </div>
-            <div class="home__prevgen__i__works flex-row">
-              <img src="../assets/demo-images/art-1.png" />
-              <img src="../assets/demo-images/art-2.png" />
-              <img src="../assets/demo-images/art-3.png" />
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
             </div>
           </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+
+
         </div>
       </div>
     </div>
@@ -182,9 +301,10 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import MakeArt from "../components/MakeArt.vue"
+import MakeArt2 from "../components/MakeArt2.vue"
 
 export default defineComponent({
   name: "Home",
-  components: { MakeArt }
+  components: { MakeArt, MakeArt2 }
 });
 </script>
