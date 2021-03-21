@@ -1,10 +1,12 @@
+/* eslint-disable */
+
 <template>
   <div class="artist">
     <div class="content-container">
       <div class="nav">
         <div class="nav__artist">
           <div class="nav__artist__title">
-            <img class="artist-image" src="../assets/artist-1.png" />
+            <img class="artist-image" src="../assets/demo-images/artist-1.png" />
             <h1>Montriaticia</h1>
           </div>
           <p>
@@ -12,8 +14,8 @@
           </p>
         </div>
         <div class="nav__artist-picker">
-            <img class="artist-image" src="../assets/artist-2.png" />
-            <img class="artist-image" src="../assets/artist-3.png" />
+            <img class="artist-image" src="../assets/demo-images/artist-2.png" />
+            <img class="artist-image" src="../assets/demo-images/artist-3.png" />
         </div>
       </div>
       <div class="block-explorer">
@@ -32,19 +34,19 @@
       <div class="artist__content">
         <div class="artist__artworks">
 
-          <img src="../assets/art-1.png" />
-          <img src="../assets/art-1.png" />
-          <img src="../assets/art-1.png" />
-          <img src="../assets/art-1.png" />
-          <img src="../assets/art-1.png" />
-          <img src="../assets/art-1.png" />
-          <img src="../assets/art-1.png" />
-          <img src="../assets/art-1.png" />
-          <img src="../assets/art-1.png" />
-          <img src="../assets/art-1.png" />
-          <img src="../assets/art-1.png" />
-          <img src="../assets/art-1.png" />
-          <img src="../assets/art-1.png" />
+          <img src="../assets/demo-images/art-1.png" />
+          <img src="../assets/demo-images/art-1.png" />
+          <img src="../assets/demo-images/art-1.png" />
+          <img src="../assets/demo-images/art-1.png" />
+          <img src="../assets/demo-images/art-1.png" />
+          <img src="../assets/demo-images/art-1.png" />
+          <img src="../assets/demo-images/art-1.png" />
+          <img src="../assets/demo-images/art-1.png" />
+          <img src="../assets/demo-images/art-1.png" />
+          <img src="../assets/demo-images/art-1.png" />
+          <img src="../assets/demo-images/art-1.png" />
+          <img src="../assets/demo-images/art-1.png" />
+          <img src="../assets/demo-images/art-1.png" />
 
         </div>
       </div>

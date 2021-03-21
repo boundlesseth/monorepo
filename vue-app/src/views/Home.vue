@@ -1,122 +1,310 @@
 <template>
   <div class="home">
     <div class="content-container">
-      <div class="home__content">
-        <div class="flex-row flex-row--center">
-          <h3>Block #12070422</h3>
-          <small>next block in 13 sec </small>
+      <!-- 
+        The top section of the homepage showing the most recently minted work
+      -->
+      <div class="home__recent gradient-border">
+        <div class="home__recent__title flex-row flex-row--center ">
+          <h2>Latest Generation</h2>
+          <small>minted from block #12989234</small>
         </div>
-        <div class="home__artworks">
-          <div class="home__artworks__item">
-            <a href="/token/1">
-              <img class="hover-scale" src="../assets/art-1.png" />
+        <div class="flex-row">
+          <div class="home__recent__item">
+            <a href="/token/795e0c7b836b80971f266d4b6b329b459de0bc7936f71a1d79c54e9beeb8377a">
+              <MakeArt  />
             </a>
-            <div class="home__artworks__item__artist">
-              <a href="/artist/1">
-                <img class="hover-scale" src="../assets/artist-1.png" />
-                <h4>
-                  Kate the Cursed
-                </h4>
-              </a>
+            <div class="home__recent__item__artist">
+              <img
+                class="hover-scale artist-image"
+                src="../assets/demo-images/artist-1.png"
+              />
+              <h3>
+                Kate the Cursed
+              </h3>
             </div>
           </div>
-          <div class="home__artworks__item">
-            <a href="/token/2">
-              <img class="hover-scale" src="../assets/art-2.png" />
+          <div class="home__recent__item">
+            <a href="/token/795e71a1d79c54e9b0c7b836b80971feeb8377af123d4b6b329b4599a6ec7936">
+              <MakeArt2 />
             </a>
-            <div class="home__artworks__item__artist">
-              <a href="/artist/2">
-                <img class="hover-scale" src="../assets/artist-2.png" />
-                <h4>
-                  Kate the Cursed
-                </h4>
-              </a>
-            </div>
-          </div>
-          <div class="home__artworks__item">
-            <a href="/token/3">
-              <img class="hover-scale" src="../assets/art-3.png" />
-            </a>
-            <div class="home__artworks__item__artist">
-              <a href="/artist/3">
-                <img class="hover-scale" src="../assets/artist-3.png" />
-                <h4>
-                  Kate the Cursed
-                </h4>
-              </a>
+            <div class="home__recent__item__artist">
+              <img
+                class="hover-scale artist-image"
+                src="../assets/demo-images/artist-2.png"
+              />
+              <h3>
+                Kate the Cursed
+              </h3>
             </div>
           </div>
         </div>
       </div>
-      <div class="block-explorer">
-        <div class="block-explorer__picker">
-          <input value="Block #12478954" />
-          <button>
-            prev
-          </button>
-          <button>
-            next
-          </button>
+
+      <!-- 
+        Previous Generations section
+      -->
+      <div class="home__prevgen">
+        <h2>
+          Previous Generations
+        </h2>
+        <div class="home__prevgen__container">
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+          <div class="home__prevgen__i gradient-border">
+            <div class="home__prevgen__i__header">
+              <h3>Gen #123789423</h3>
+              <small>seeded 10/19/20</small>
+            </div>
+            <div class="home__prevgen__i__works">
+              <span>
+                <MakeArt />
+              </span>
+              <span>
+                <MakeArt2 />
+              </span>
+            </div>
+          </div>
+
+
         </div>
-        <button>shuffle</button>
-        <button>latest</button>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-  .home {
-    &__content {
-      padding: 4em;
+.home {
+  &__recent {
+    padding: 0 4em 2em;
+    margin-top: 6em;
+    &__title {
+      background: var(--white);
+      position: relative;
+      top: -1.2em;
+      padding: 0 1em;
+      box-sizing: content-box;
+      left: -1em;
+      margin-bottom: 2em;
     }
-    &__artworks {
-      display: flex;
-      flex-direction: row;
-      margin: 2em 0;
-      &__item {
-        flex: 1;
-        &:not(:last-of-type) {
-          margin-right: 2em;
+    &__item {
+      flex: 1;
+      &:not(:last-of-type) {
+        margin-right: 2em;
+      }
+      > a {
+        > img {
+          width: 100%;
         }
-        a {
-          > img {
-            width: 100%;
-          }
-        }
-        &__artist > a {
-          display: flex;
-          align-items: center;
-          margin: 0.8em 0;
-          padding: 0.2em 0.5em;
-          border-radius: 0.5em;
-          &:hover {
-            background: #eee;
-          }
-          > img {
-            border: 0.15em solid black;
-            height: 3em;
-            width: 3em;
-            border-radius: 50%;
-            object-fit: cover;
-          }
-          h4 {
-            padding-left: 1em;
-          }
+      }
+      &__artist {
+        display: flex;
+        align-items: center;
+        margin: 0.8em 0;
+        padding: 0.2em 0.5em;
+        border-radius: 0.5em;
+        h3 {
+          padding-left: 1em;
         }
       }
     }
   }
-  .block-explorer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  &__prevgen {
+    text-align: center;
+    padding: 8em 2em;
+    h2 {
+      margin-bottom: 3em;
+    }
+    &__container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8em;
+      grid-auto-rows: minmax(100px, auto);
+    }
+    &__i {
+      &__header {
+        background: var(--white);
+        position: relative;
+        top: -0.6em;
+        display: inline-block;
+        padding: 0 1em;
+        margin: 0 auto;
+      }
+    }
+    &__i__works {
+      margin: 18% 0 30%;
+      justify-content: space-evenly;
+      img {
+        display: inline-block;
+        width: 25%;
+      }
+    }
   }
+}
 </style>
 
 <script lang="ts">
-  import { defineComponent } from "vue";
-  export default defineComponent({
-    name: "Home"
+import { defineComponent } from "vue";
+import MakeArt from "../components/MakeArt.vue"
+import MakeArt2 from "../components/MakeArt2.vue"
+
+export default defineComponent({
+  name: "Home",
+  components: { MakeArt, MakeArt2 }
 });
 </script>
