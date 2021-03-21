@@ -1,80 +1,120 @@
-pragma solidity ^0.6.2;
+pragma solidity 0.6.2;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/token/ERC1155/ERC1155Burnable.sol";
+import "./IRegistry.sol";
+import "./Seller.sol";
 
-contract Boundless is Ownable, ERC1155, ERC1155Burnable {
 
-  mapping (uint256 => bool) public minted;
-  uint8 artists;
+contract Boundless is Ownable, IERC1155, ERC1155Burnable {
 
-  event TokenMinted(bytes32 _blockhash, uint256 id);
-  event ArtistAdded(uint8 artists);
-  event TokenBurned(uint256 id)
+    event ArtistAdded(bytes32 artist);
+    event NewArtistRegistry(address artistRegistry);
+    event NewBlockRegistry(address blockRegistry);
+    event NewSeller(address seller);
+    event TokenBurned(address account, uint256 id);
+    event TokensBurned(address account, uint256[] ids);
+    event TokenMinted(bytes32 _blockhash, uint256 id);
 
-  // TODO
-  constructor(uint8 _artists) public ERC1155("https://game.example/api/item/{id}.json") {
-    artists = _artists;
-  }
+    mapping (uint256 => int96) public rates;
+    mapping (uint256 => bool) public minted;
 
-  // TODO
-  // allows anyone to mint a new NFT, only if the given hash is a valid block hash (provable by current block hash) and has not already been minted.
-  function mint(bytes32 _blockhash, uint8 artist)
-    public
-  {
-    uint256 id = getId(_blockhash, artist);
-    require(!minted[id], "Already minted");
-    require(isValid(_blockhash), "Invalid _blockhash");
-    _mint(msg.sender, id, 1, "");
-    minted[id] = true;
-    emit TokenMinted(_blockhash, id);
-  }
+    IRegistry public artistRegistry;
+    IRegistry public blockRegistry;
+    Seller public seller;
 
-  // get a token id from a block hash and artist ID
-  function getId(bytes32 _blockhash, uint8 artist)
-    public
-    pure
+    // TODO
+    constructor(address _artistRegistry, address _blockRegistry, address _seller)
+        public
+        ERC1155("https://game.example/api/item/{id}.json")
+    {
+        setArtistRegistry(_artistRegistry);
+        setBlockRegistry(_blockRegistry);
+        setSeller(_seller);
+    }
+
+    // TODO
+    // allows anyone to mint a new NFT, only if the given hash and artist are a valid.
+    function mint(bytes32 _blockhash, bytes32 _artist)
+        public
+    {
+        uint256 id = getId(_blockhash, _artist);
+        require(!minted[id], "Already minted");
+        require(blockRegistry.isValid(_blockhash), "Invalid Block");
+        require(artistRegistry.isValid(_artist), "Invalid Artist");
+        _mint(address(seller), id, 1, "");
+        minted[id] = true;
+        seller.sellToken(address(this), id);
+        emit TokenMinted(_blockhash, id);
+
+    }
+
+    // get a token id from a block hash and artist ID
+    function getId(bytes32 _blockhash, bytes32 _artist)
+        public
+        pure
     returns(uint256 id)
-  {
-    id = uint256(_blockhash) + artist;
-    return (id);
-  }
+    {
+        id = uint256(keccak256(abi.encode(_blockhash, _artist)));
+        return (id);
+    }
 
-  // TODO
-  // checks if a given block hash is corresponds to a real historic block.
-  function isValid(bytes32 _blockhash)
-    public
-    pure
-    returns (bool valid)
-  {
-    return (true);
-  }
+    // Burn a token
+    function burn(address account, uint256 id, uint256 value)
+        public
+        override
+    {
+        ERC1155Burnable.burn(account, id, value);
+        minted[id] = false;
+        emit TokenBurned(account, id);
+    }
 
-  function addArtist()
-  public
-  onlyOwner
-  {
-    artists ++;
-    emit ArtistAdded(artists);
-  }
+    // Burn a batch of tokens
+    function burnBatch(address account, uint256[] memory ids, uint256[] memory values)
+        public
+        override
+    {
+        ERC1155Burnable.burnBatch(account, ids, values);
+        for (uint256 i = 0; i < ids.length; i++){
+            ERC1155Burnable.burn(account, ids[i], values[i]);
+            minted[ids[i]] = false;
+        }
+        emit TokensBurned(account, ids);
+    }
 
-  // Burn a token
-  function burn(address account, uint256 id, uint256 value)
-    public
-    virtual
-    override
-  {
-    ERC1155Burnable.burn(account,id, value);
-    emit TokenBurned(id)
-  }
+    function getMinted(uint256 id)
+        public
+        view
+        returns(bool)
+    {
+        return(minted[id]);
+    }
 
-  // Burn a batch of tokens
-  function burnBatch(address account, uint256[] memory ids, uint256[] memory values)
-    public
-    virtual
-    override
-  {
-    ERC1155Burnable.burnBatch(account,ids, values);
-  }
+    // set the artist registry.
+    function setArtistRegistry(address _artistRegistry)
+        public
+        onlyOwner
+    {
+        artistRegistry = IRegistry(_artistRegistry);
+        emit NewArtistRegistry(address(artistRegistry));
+    }
+
+    // set the block registry
+    function setBlockRegistry(address _blockRegistry)
+        public
+        onlyOwner
+    {
+        blockRegistry = IRegistry(_blockRegistry);
+        emit NewBlockRegistry(address(blockRegistry));
+    }
+
+    // set the seller.
+    function setSeller(address _seller)
+        public
+        onlyOwner
+    {
+        seller = Seller(_seller);
+        emit NewSeller(address(seller));
+    }
 }

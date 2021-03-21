@@ -10,6 +10,7 @@
     ]
   },
   "scripts": {
-    "compile": "yarn workspace contracts hardhat compile"
+    "compile": "yarn workspace contracts hardhat compile",
+    "test": "yarn workspace contracts hardhat test"
   }
 }
