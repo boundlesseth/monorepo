@@ -13,7 +13,7 @@
         <div class="flex-row">
           <div class="home__recent__item">
             <a href="/token/1">
-              <img class="hover-scale" src="../assets/demo-images/art-1.png" />
+              <make-art v-bind:seed="heee" />
             </a>
             <div class="home__recent__item__artist">
               <img class="hover-scale artist-image" src="../assets/demo-images/artist-1.png" />
@@ -171,7 +171,10 @@
 
 <script lang="ts">
   import { defineComponent } from "vue";
+  import MakeArt from "../components/MakeArt.vue"
+
   export default defineComponent({
-    name: "Home"
+    name: "Home",
+    components: { MakeArt }
   });
 </script>

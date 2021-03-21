@@ -18,12 +18,6 @@ const routes: Array<RouteRecordRaw> = [
     name: "Token",
     component: () =>
       import(/* webpackChunkName: "token" */ "../views/Token.vue")
-  },
-  {
-    path: "/account",
-    name: "Account",
-    component: () =>
-      import(/* webpackChunkName: "account" */ "../views/Account.vue")
   }
 ];
 
