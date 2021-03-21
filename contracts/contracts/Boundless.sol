@@ -1,4 +1,5 @@
 pragma solidity 0.6.2;
+pragma experimental ABIEncoderV2;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
@@ -16,9 +17,17 @@ contract Boundless is Ownable, IERC1155, ERC1155Burnable {
     event TokenBurned(address account, uint256 id);
     event TokensBurned(address account, uint256[] ids);
     event TokenMinted(bytes32 _blockhash, uint256 id);
+    event TokenTouched(uint256 id, bytes32 _blockhash, bytes32 artist);
 
+    struct Token {
+        bytes32 artist;
+        bytes32 blockhash;
+    }
+
+    mapping (uint256 => Token) public tokens;
     mapping (uint256 => int96) public rates;
     mapping (uint256 => bool) public minted;
+
 
     IRegistry public artistRegistry;
     IRegistry public blockRegistry;
@@ -44,6 +53,7 @@ contract Boundless is Ownable, IERC1155, ERC1155Burnable {
         require(blockRegistry.isValid(_blockhash), "Invalid Block");
         require(artistRegistry.isValid(_artist), "Invalid Artist");
         _mint(address(seller), id, 1, "");
+        touchToken(_blockhash, _artist);
         minted[id] = true;
         seller.sellToken(address(this), id);
         emit TokenMinted(_blockhash, id);
@@ -83,12 +93,30 @@ contract Boundless is Ownable, IERC1155, ERC1155Burnable {
         emit TokensBurned(account, ids);
     }
 
+    function touchToken(bytes32 _blockhash, bytes32 _artist)
+        public
+    {
+        uint256 id = getId(_blockhash, _artist);
+        tokens[id].artist = _artist;
+        tokens[id].blockhash = _blockhash;
+        emit TokenTouched(id, _blockhash, _artist);
+    }
+
     function getMinted(uint256 id)
         public
         view
         returns(bool)
     {
         return(minted[id]);
+    }
+
+    function reverseLookup(uint256 id)
+        public
+        view
+    returns(Token memory)
+    {
+        Token memory token = tokens[id];
+        return(token);
     }
 
     // set the artist registry.
