@@ -38,18 +38,22 @@ a {
   color: inherit;
 }
 
-h1{
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
 
+h1 {
+  margin: 0;
 }
 h2 {
 
 }
 h3 {
-  margin: 0;
   font-weight: bold;
 }
 h4 {
-  margin: 0;
+
 }
 
 .nav {
@@ -68,9 +72,8 @@ h4 {
 
 .content-container {
   max-width: 80em;
-  margin: 0 auto;
+  margin: 0 auto 4em;
   position: relative;
-  min-height: 100vh;
 }
 
 .flex-row {
