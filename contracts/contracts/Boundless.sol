@@ -66,6 +66,7 @@ contract Boundless is Ownable, IERC1155, ERC1155Burnable {
         override
     {
         ERC1155Burnable.burn(account, id, value);
+        minted[id] = false;
         emit TokenBurned(account, id);
     }
 
@@ -75,6 +76,10 @@ contract Boundless is Ownable, IERC1155, ERC1155Burnable {
         override
     {
         ERC1155Burnable.burnBatch(account, ids, values);
+        for (uint256 i = 0; i < ids.length; i++){
+            ERC1155Burnable.burn(account, ids[i], values[i]);
+            minted[ids[i]] = false;
+        }
         emit TokensBurned(account, ids);
     }
 
