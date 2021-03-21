@@ -42,54 +42,54 @@
 </template>
 
 <style lang="scss">
-  .token {
-    &__container {
-      margin-top: 6em;
-      padding-bottom: 1em;
-    }
-    &__title {
-      padding: 0 6em;
-      h1 {
-        background: var(--white);
-        display: inline-block;
-        position: relative;
-        top: -0.7em;
-        padding: 0 0.5em;
-        left: -0.5em;
-      }
-    }
-    &__image {
-      width: 66.7%;
-      padding: 0 4em 2em 6em;
-      img {
-        width: 100%;
-      }
-    }
-    &__info {
-      margin: 2em 4em 2em 0;
+.token {
+  &__container {
+    margin-top: 6em;
+    padding-bottom: 1em;
+  }
+  &__title {
+    padding: 0 6em;
+    h1 {
+      background: var(--white);
+      display: inline-block;
       position: relative;
-      width: 33%;
-      &__section {
-        padding-bottom: 3em;
-      }
-      button {
-        position: absolute;
-        bottom: 0;
-        font-size: 2em;
-        background: none;
-        border: 1px solid var(--black);
-        width: 100%;
-        padding: 1em;
-      }
+      top: -0.7em;
+      padding: 0 0.5em;
+      left: -0.5em;
     }
   }
+  &__image {
+    width: 66.7%;
+    padding: 0 4em 2em 6em;
+    img {
+      width: 100%;
+    }
+  }
+  &__info {
+    margin: 2em 4em 2em 0;
+    position: relative;
+    width: 33%;
+    &__section {
+      padding-bottom: 3em;
+    }
+    button {
+      position: absolute;
+      bottom: 0;
+      font-size: 2em;
+      background: none;
+      border: 1px solid var(--black);
+      width: 100%;
+      padding: 1em;
+    }
+  }
+}
 </style>
 
 <script lang="ts">
-  import { defineComponent } from "vue";
+import { defineComponent } from "vue";
 
-  export default defineComponent({
-    name: "home",
-    components: {}
-  });
+export default defineComponent({
+  name: "home",
+  components: {}
+});
 </script>
