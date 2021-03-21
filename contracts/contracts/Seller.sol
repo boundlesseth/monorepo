@@ -51,13 +51,13 @@ contract Seller is Ownable, ERC1155Holder {
 
     // TODO
     // buy a token that is currently on sale.
-    function buyToken(address _tokenContract, uint256 id)
+    function buyToken(address buyer, address _tokenContract, uint256 id)
         public
     {
         IERC1155 erc1155 = IERC1155(_tokenContract);
         require(erc1155.balanceOf(address(this), id) > 0, "Seller has no balance in this token.");
-        nativeToken.transferFrom(msg.sender, receiver, getCurrentPrice(address(erc1155), id));
-        erc1155.safeTransferFrom(address(this), msg.sender, id, erc1155.balanceOf(address(this), id), "");
+        nativeToken.transferFrom(buyer, receiver, getCurrentPrice(address(erc1155), id));
+        erc1155.safeTransferFrom(address(this), buyer, id, erc1155.balanceOf(address(this), id), "");
     }
 
     // TODO
