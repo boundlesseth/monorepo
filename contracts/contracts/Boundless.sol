@@ -68,12 +68,21 @@ contract Boundless is Ownable, IERC1155, ERC1155Burnable {
         override
     {
         ERC1155Burnable.burnBatch(account, ids, values);
-        for (i = 0; ; increase the value of counter;) {
-            Execute multiple instructions here
+        for (uint256 i = 0; i < ids.length; i++){
+            ERC1155Burnable.burn(account, ids[i], values[i]);
+            minted[ids[i]] = false;
         }
         emit TokensBurned(account, ids);
     }
 
+    function getMinted(uint256 id)
+        public
+        view
+        returns(bool)
+    {
+        return(minted[id]);
+    }
+    
     // TODO
     // buy a token from the current owner for the current price
     function buyToken(address buyer, uint256 id)
@@ -84,9 +93,9 @@ contract Boundless is Ownable, IERC1155, ERC1155Burnable {
 
     // get a token id from a block hash and artist ID
     function getId(bytes32 _blockhash, bytes32 _artist)
-    public
-    pure
-    returns(uint256 id)
+        public
+        pure
+        returns(uint256 id)
     {
         id = uint256(keccak256(abi.encode(_blockhash, _artist)));
         return (id);
