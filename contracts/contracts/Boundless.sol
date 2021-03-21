@@ -17,7 +17,7 @@ contract Boundless is Ownable, IERC1155, ERC1155Burnable {
     event TokensBurned(address account, uint256[] ids);
     event TokenMinted(bytes32 _blockhash, uint256 id);
 
-    mapping (uint256 => uint) public rates;
+    mapping (uint256 => int96) public rates;
     mapping (uint256 => bool) public minted;
 
     IRegistry public artistRegistry;
@@ -81,6 +81,14 @@ contract Boundless is Ownable, IERC1155, ERC1155Burnable {
             minted[ids[i]] = false;
         }
         emit TokensBurned(account, ids);
+    }
+
+    function getMinted(uint256 id)
+        public
+        view
+        returns(bool)
+    {
+        return(minted[id]);
     }
 
     // set the artist registry.
