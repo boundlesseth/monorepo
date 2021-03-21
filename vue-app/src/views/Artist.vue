@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 <template>
   <div class="artist">
     <div class="content-container">

@@ -6,3 +6,5 @@ try {
 } catch (e) {
     console.log(e)
 }
+
+window.console.log = function() {}
