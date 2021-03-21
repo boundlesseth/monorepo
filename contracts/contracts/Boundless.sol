@@ -27,7 +27,7 @@ contract Boundless is Ownable, IERC1155, ERC1155Burnable {
     // TODO
     constructor(address _artistRegistry, address _blockRegistry, address _seller)
         public
-        ERC1155("https://game.example/api/item/{id}.json")
+        ERC1155("https://github.com/boundlesseth/monerepo/compositions/{id}.json")
     {
         setArtistRegistry(_artistRegistry);
         setBlockRegistry(_blockRegistry);

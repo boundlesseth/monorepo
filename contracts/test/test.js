@@ -1,8 +1,9 @@
-const { expect } = require("chai");
+const { expect, assert } = require("chai");
 
 describe("Boundless should:", function() {
     let accounts, artistRegistry, blockRegistry, boundless, deployer, erc20, id, receiver, seller;
     const zeros = "0x0000000000000000000000000000000000000000000000000000000000000000";
+    const ones  = "0x1111111111111111111111111111111111111111111111111111111111111111"
     const someBlock = "0xe05b420bb82a0bdf3b94227f0aa14106a0395e70be32bdb38218cf526ae6e88d";
 
     before(async function() {
@@ -46,8 +47,7 @@ describe("Boundless should:", function() {
         expect(await boundless.balanceOf(seller.address, id)).to.equal(ethers.BigNumber.from("0x01"));
 
         await seller.sellToken(boundless.address, id);
-        let currentPrice = await seller.getCurrentPrice(boundless.address, id);
-        expect(currentPrice).to.not.equal(ethers.BigNumber.from("0x00"));
+        expect(await seller.getCurrentPrice(boundless.address, id)).to.not.equal(ethers.BigNumber.from("0x00"));
 
         await erc20.approve(seller.address,100000000);
         await seller.buyToken(boundless.address, id);
@@ -55,9 +55,22 @@ describe("Boundless should:", function() {
         expect(await boundless.balanceOf(buyer.address, id)).to.equal(ethers.BigNumber.from("0x01"));
     });
 
-    it("burn tokens", async function() {
+    it("burn tokens and remint them", async function() {
         await boundless.burn(buyer.address, id, boundless.balanceOf(buyer.address, id));
         expect(await boundless.balanceOf(buyer.address, id)).to.equal(ethers.BigNumber.from("0x00"));
         expect(await boundless.getMinted(id)).to.equal(false);
+        await boundless.mint(someBlock,zeros);
+        await seller.sellToken(boundless.address, id);
+        expect(await seller.getCurrentPrice(boundless.address, id)).to.not.equal(ethers.BigNumber.from("0x00"));
+    });
+
+    it("only mint tokens from valid artists", async function() {
+        try {
+            await boundless.mint(someBlock,ones);
+            assert.fail("The transaction should have thrown an error");
+        }
+        catch (err) {
+            assert.include(err.message, "revert", "The error message should contain 'revert'");
+        }
     });
 });
