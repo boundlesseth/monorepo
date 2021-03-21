@@ -7,7 +7,9 @@
         </div>
         <div class="flex-row">
           <div class="token__image">
-            <img src="../assets/demo-images/art-3.png" />
+            <MakeArt
+              src="/p5-artworks/mondriaticia.html?seed=795e71a1d79c54e9b0c7b836b80971feeb8377af123d4b6b329b4599a6ec7936"
+            />
           </div>
           <div class="token__info">
             <div class="token__info__section">
@@ -87,9 +89,15 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import MakeArt from "../components/MakeArt.vue";
 
 export default defineComponent({
   name: "home",
-  components: {}
+  components: {
+    MakeArt
+  },
+  mounted() {
+    console.log(this.$route.params.token)
+  }
 });
 </script>

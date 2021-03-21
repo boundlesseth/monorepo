@@ -101,7 +101,7 @@ img.artist-image {
 
 .gradient-border {
   border-radius: $borderRadius;
-  border: 1px solid var(--border-color);
+  border: $borderWidth solid var(--border-color);
 
   /*
     z-index is messing things up the colorful borders

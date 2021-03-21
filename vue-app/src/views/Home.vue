@@ -11,7 +11,7 @@
         </div>
         <div class="flex-row">
           <div class="home__recent__item">
-            <a href="/token/1">
+            <a href="/token/795e0c7b836b80971f266d4b6b329b459de0bc7936f71a1d79c54e9beeb8377a">
               <MakeArt
                 src="/p5-artworks/albertron.html?seed=795e0c7b836b80971f266d4b6b329b459de0bc7936f71a1d79c54e9beeb8377a"
               />
@@ -27,7 +27,7 @@
             </div>
           </div>
           <div class="home__recent__item">
-            <a href="/token/2">
+            <a href="/token/795e71a1d79c54e9b0c7b836b80971feeb8377af123d4b6b329b4599a6ec7936">
               <MakeArt
                 src="/p5-artworks/mondriaticia.html?seed=795e71a1d79c54e9b0c7b836b80971feeb8377af123d4b6b329b4599a6ec7936"
               />
@@ -43,7 +43,7 @@
             </div>
           </div>
           <div class="home__recent__item">
-            <a href="/token/3">
+            <a href="/token/795e0d79c54e9beeb8377a395ae971fc7b89b459de0bc7936f71a1266d4b6b32">
               <MakeArt
                 src="/p5-artworks/albertron.html?seed=795e0d79c54e9beeb8377a395ae971fc7b89b459de0bc7936f71a1266d4b6b32"
               />
