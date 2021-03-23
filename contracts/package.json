@@ -5,6 +5,9 @@
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@types/chai": "^4.2.15",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^14.14.35",
     "chai": "^4.3.4",
     "ethereum-waffle": "^3.3.0",
     "ethers": "^5.0.32",
@@ -20,6 +23,10 @@
     "typechain": "^4.0.3"
   },
   "scripts": {
-    "compile": "hardhat compile"
+    "build": "hardhat compile",
+    "clean": "rm -rf cache && rm -rf build",
+    "deploy:local": "yarn clean && yarn build && hardhat run scripts/deploy.ts --network localhost",
+    "node": "hardhat node",
+    "test": "hardhat test"
   }
 }
